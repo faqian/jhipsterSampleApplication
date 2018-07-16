@@ -1,0 +1,22 @@
+{
+    "name": "Train",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "trainUser",
+            "otherEntityName": "trainUser",
+            "otherEntityRelationshipName": "train"
+        }
+    ],
+    "changelogDate": "20180716062751",
+    "javadoc": "考试培训模块数据模型设计表和数据库的关系",
+    "entityTableName": "train",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

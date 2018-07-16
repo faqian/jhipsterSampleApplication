@@ -1,0 +1,21 @@
+{
+    "name": "TestPaper",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testPaperUser",
+            "otherEntityName": "testPaperUser",
+            "otherEntityRelationshipName": "testPaper"
+        }
+    ],
+    "changelogDate": "20180716062753",
+    "entityTableName": "test_paper",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

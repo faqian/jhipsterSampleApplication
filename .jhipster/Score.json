@@ -1,0 +1,21 @@
+{
+    "name": "Score",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "testPaper",
+            "otherEntityName": "testPaperUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180716062755",
+    "entityTableName": "score",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
