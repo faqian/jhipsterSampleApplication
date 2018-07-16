@@ -1,0 +1,21 @@
+{
+    "name": "TrainUser",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipName": "train",
+            "otherEntityName": "train",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180716062752",
+    "entityTableName": "train_user",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-test-paper-user-heading">Create or edit a Test Paper User</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!testPaperUser.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="testPaperUser.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testPaper">Test Paper</label>
+                    <select class="form-control" id="field_testPaper" name="testPaper" [(ngModel)]="testPaperUser.testPaper" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testPaperOption.id === testPaperUser.testPaper?.id ? testPaperUser.testPaper : testPaperOption" *ngFor="let testPaperOption of testpapers; trackBy: trackTestPaperById">{{testPaperOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

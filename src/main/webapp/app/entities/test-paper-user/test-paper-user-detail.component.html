@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testPaperUser">
+            <h2><span>Test Paper User</span> {{testPaperUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Test Paper</span></dt>
+                <dd>
+                    <div *ngIf="testPaperUser.testPaper">
+                        <a [routerLink]="['/test-paper', testPaperUser.testPaper?.id, 'view']">{{testPaperUser.testPaper?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-paper-user', testPaperUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

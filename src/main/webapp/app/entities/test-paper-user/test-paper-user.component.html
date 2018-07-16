@@ -1,0 +1,58 @@
+<div>
+    <h2 id="page-heading">
+        <span>Test Paper Users</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-test-paper-user" [routerLink]="['/test-paper-user/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Test Paper User
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="testPaperUsers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Test Paper</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testPaperUser of testPaperUsers ;trackBy: trackId">
+                <td><a [routerLink]="['/test-paper-user', testPaperUser.id, 'view' ]">{{testPaperUser.id}}</a></td>
+                <td>
+                    <div *ngIf="testPaperUser.testPaper">
+                        <a [routerLink]="['../test-paper', testPaperUser.testPaper?.id, 'view' ]" >{{testPaperUser.testPaper?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/test-paper-user', testPaperUser.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/test-paper-user', testPaperUser.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-paper-user/'+ testPaperUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

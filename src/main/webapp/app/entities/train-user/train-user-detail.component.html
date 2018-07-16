@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="trainUser">
+            <h2><span>Train User</span> {{trainUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Train</span></dt>
+                <dd>
+                    <div *ngIf="trainUser.train">
+                        <a [routerLink]="['/train', trainUser.train?.id, 'view']">{{trainUser.train?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/train-user', trainUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
